@@ -33,7 +33,12 @@ class Planet():
         density = round((self.mass / self.volume),2)
         print(f"DENSIDAD:{density}")
     def isExterior(self):
-        pass
+        #Si el cinturón de asteroides se encuentra hasta un maximo de 3.4 UA y UA = 149.5 entonces cualquier planeta con avg_distance_sun > 149.5* 3.4 o 508.3 será exterior
+        if self.avg_distance_sun > 508.3:
+            print("El planeta es exterior")
+        else:
+            print("El planeta no es exterior")
+
 
 planeta1 = Planet("Pluton",5,500.3,785.32,543,893,Planet.Planet_type.ENANO,True)
 
@@ -41,3 +46,4 @@ planeta1 = Planet("Pluton",5,500.3,785.32,543,893,Planet.Planet_type.ENANO,True)
 if __name__ == "__main__":
     planeta1.show_attributes()
     planeta1.calculate_density()
+    planeta1.isExterior()
