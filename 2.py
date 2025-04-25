@@ -1,4 +1,5 @@
 from enum import Enum
+#declaración de la clase
 class Planet():
     name:str = None
     satellites:int = 0
@@ -11,6 +12,9 @@ class Planet():
         TERRESTRE = "TERRESTRE"
         GASEOSO = "GASEOSO"
     observable:bool = False
+
+
+    #constructor
     def __init__(self,name,satellites,mass,volume,diameter,avg_distance_sun,Planet_type,observable):
         self.name = name
         self.satellites = satellites
@@ -20,6 +24,9 @@ class Planet():
         self.avg_distance_sun = avg_distance_sun
         self.Planet_type = Planet_type
         self.observable = observable
+
+
+        #mostrar atributos
     def show_attributes(self):
         print(self.name)
         print(self.satellites)
@@ -29,6 +36,9 @@ class Planet():
         print(self.avg_distance_sun)
         print(self.Planet_type.name) #Añadimos el metodo .name
         print(self.observable)
+
+
+        #calcular densidad
     def calculate_density(self):
         density = round((self.mass / self.volume),2)
         print(f"DENSIDAD:{density}")
@@ -39,11 +49,11 @@ class Planet():
         else:
             print("El planeta no es exterior")
 
-
+#objetos
 planeta1 = Planet("Pluton",5,500.3,785.32,543,893,Planet.Planet_type.ENANO,True)
 planeta2 = Planet("Santiago",3,20000,34442,4200,403,Planet.Planet_type.ENANO,False)
 
-
+#ejecución
 if __name__ == "__main__":
     planeta1.show_attributes()
     planeta1.calculate_density()
