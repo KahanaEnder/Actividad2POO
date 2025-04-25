@@ -41,9 +41,13 @@ class Planet():
 
 
 planeta1 = Planet("Pluton",5,500.3,785.32,543,893,Planet.Planet_type.ENANO,True)
+planeta2 = Planet("Santiago",3,20000,34442,4200,403,Planet.Planet_type.ENANO,False)
 
 
 if __name__ == "__main__":
     planeta1.show_attributes()
     planeta1.calculate_density()
     planeta1.isExterior()
+    planeta2.show_attributes()
+    planeta2.calculate_density()
+    planeta2.isExterior()
